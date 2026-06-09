@@ -1,4 +1,4 @@
-# GAP Release Code
+# GAP
 
 This is the official implementation for:
 
