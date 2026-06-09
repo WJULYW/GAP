@@ -1,8 +1,8 @@
 # GAP Release Code
 
-This directory contains a cleaned release version of the GAP implementation for:
+This is the official implementation for:
 
-**Align the GAP: Prior-based Unified Multi-Task Remote Physiological Measurement Framework for Domain Generalization and Personalization**
+**Align the GAP: Prior-based Unified Multi-Task Remote Physiological Measurement Framework for Domain Generalization and Personalization** (IJCV2026)
 
 The file layout follows the original research code:
 
@@ -14,27 +14,8 @@ The file layout follows the original research code:
 - `TTA_methods.py`: test-time adaptation wrapper.
 - `utils.py`: metrics, signal utilities, and argument parser.
 
-## Environment
 
-The code is intentionally kept free of hard dependencies from the old experimental scripts.
-
-Install the minimal dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-## Smoke Test
-
-Run a random-data check before launching experiments:
-
-```bash
-python tests/smoke_test.py
-python train.py --smoke
-python tta_train.py --smoke
-```
-
-## Data Layout
+## Data
 
 The default data root is `./data/STMap`. Override it with `--data-root`.
 
@@ -57,6 +38,8 @@ Build indexes from STMap folders with:
 python train.py --data-root /path/to/STMap --tgt PURE --reData 1
 ```
 
+For HMPC-D dataset, please refer to [PhysDrive](https://github.com/WJULYW/PhysDrive-Dataset); For HCW dataset, please refer to [HCW](https://github.com/WJULYW/PhysMLE); For other datasets, as well as the STMap generation, please refer to https://github.com/WJULYW/HSRD.
+
 ## MSSDG Training
 
 ```bash
@@ -72,3 +55,20 @@ python tta_train.py --data-root /path/to/STMap --tgt PURE --checkpoint Result_Mo
 ```
 
 TTPA resets the model to the same GAP-G checkpoint for each target subject and adapts samples in chronological order.
+
+## Citation
+Title: [Align the gap: Prior-based unified multi-task remote physiological measurement framework for domain generalization and personalization](https://link.springer.com/article/10.1007/s11263-025-02707-w)
+
+Jiyao Wang, Xiao Yang, Hao Lu, Dengbo He, Kaishun Wu, IJCV, 2026  
+```
+@article{wang2026align,
+  title={Align the gap: Prior-based unified multi-task remote physiological measurement framework for domain generalization and personalization},
+  author={Wang, Jiyao and Yang, Xiao and Lu, Hao and He, Dengbo and Wu, Kaishun},
+  journal={International Journal of Computer Vision},
+  volume={134},
+  number={5},
+  pages={199},
+  year={2026},
+  publisher={Springer}
+}
+```
